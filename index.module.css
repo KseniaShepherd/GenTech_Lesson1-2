@@ -1,6 +1,15 @@
-.categoriesContainer {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  margin: 40px;
-  font-size: 23px;
+.productsItem{
+    width: 200px;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+.productsItem p{
+ text-decoration: none;
+ color: black;
+}
+.productsItem img{
+    width: 150px;
 }
