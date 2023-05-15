@@ -1,0 +1,6 @@
+.categoriesContainer {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  margin: 40px;
+  font-size: 23px;
+}
