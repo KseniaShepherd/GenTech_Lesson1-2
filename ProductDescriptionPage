@@ -1,0 +1,23 @@
+import React, { useEffect, useState } from 'react'
+import { getProduct } from '../../requests/getProduct';
+import { useParams } from 'react-router-dom';
+
+export default function ProductDescriptionPage() {
+  const {productId} = useParams();
+  console.log(productId);
+  const [product, setProduct] = useState({});
+  const { title, description, image, price } = product;
+useEffect(()=> { getProduct(productId, setProduct)},[])
+
+console.log(product);
+
+  
+  return (
+    <div>
+       <p>{title}</p>
+      <img src={image} alt={title} />
+      <p>{description}</p>
+      <p>{price} $</p>
+      </div> 
+  )
+}
