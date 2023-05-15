@@ -1,0 +1,17 @@
+import React, { useEffect, useState } from 'react'
+import { useParams } from 'react-router-dom';
+import ProductsItem from '../ProductsItem';
+import {getProducts} from '../../requests/getProducts'
+import s from './index.module.css'
+
+export default function ProductsContainer() {
+    const{category}=useParams();
+    const[products, setProducts] = useState([]);
+    useEffect(()=>{
+        getProducts(category,setProducts)
+    },[])
+  return (
+    <div className={s.productsContainer}>{
+        products.map(el=> <ProductsItem key = {el.id} {...el}/>)}</div>
+  )
+}
